@@ -1,10 +1,5 @@
-package elasticsearch.concatenate;
+package org.elasticsearch.index.analysis.concatenate;
 
-import java.util.Collection;
-
-import org.elasticsearch.common.collect.Lists;
-import org.elasticsearch.common.component.LifecycleComponent;
-import org.elasticsearch.common.inject.Module;
 import org.elasticsearch.plugins.AbstractPlugin;
 
 public class ConcatenatePlugin extends AbstractPlugin {
