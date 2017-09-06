@@ -1,15 +1,18 @@
 package org.elasticsearch.index.analysis.concatenate;
 
-import org.elasticsearch.plugins.AbstractPlugin;
 
-public class ConcatenatePlugin extends AbstractPlugin {
-    @Override
-    public String name() {
-        return "ConcatenatePlugin";
-    }
+import org.elasticsearch.index.analysis.TokenFilterFactory;
+import org.elasticsearch.indices.analysis.AnalysisModule;
+import org.elasticsearch.plugins.AnalysisPlugin;
+import org.elasticsearch.plugins.Plugin;
+
+import java.util.Collections;
+import java.util.Map;
+
+public class ConcatenatePlugin extends Plugin implements AnalysisPlugin {
 
     @Override
-    public String description() {
-        return "Plugin that provides a Token Filter that recombines all of the tokens in a token stream back into one.";
+    public Map<String, AnalysisModule.AnalysisProvider<TokenFilterFactory>> getTokenFilters() {
+        return Collections.singletonMap("concatenate", ConcatenateFilterFactory::new);
     }
 }

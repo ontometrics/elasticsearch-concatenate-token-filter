@@ -12,11 +12,12 @@ import org.apache.lucene.util.Version;
 public final class ConcatenateFilter extends TokenFilter {
 
     private final static String DEFAULT_TOKEN_SEPARATOR = " ";
+    public final static int DEFAULT_INCREMENT_GAP = 100;
 
     private final CharTermAttribute termAtt = addAttribute(CharTermAttribute.class);
     private final PositionIncrementAttribute posIncrAtt = addAttribute(PositionIncrementAttribute.class);
     private String tokenSeparator = null;
-    private int incrementGap = 100;
+    private int incrementGap = DEFAULT_INCREMENT_GAP;
     private StringBuilder builder = new StringBuilder();
     private AttributeSource.State previousState = null;
     private boolean recheckPrevious = false;
@@ -30,7 +31,7 @@ public final class ConcatenateFilter extends TokenFilter {
     public ConcatenateFilter(Version matchVersion, TokenStream input, String tokenSeparator) {
         super(input);
         this.tokenSeparator = tokenSeparator!=null ? tokenSeparator : DEFAULT_TOKEN_SEPARATOR;
-        this.incrementGap = 100;
+        this.incrementGap = DEFAULT_INCREMENT_GAP;
     }
 
     @Override
