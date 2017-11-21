@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>elasticsearch.concatenate</groupId>
 	<artifactId>onto-elasticsearch-concatenate</artifactId>
-	<version>5.4.1</version>
+	<version>5.6.4</version>
 	<packaging>jar</packaging>
 	<description>Plugin that provides a Token Filter that recombines all of the tokens in a token stream back into one.</description>
 	<inceptionYear>2015</inceptionYear>
@@ -19,7 +19,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.sourceVersion>1.8</project.build.sourceVersion>
-		<elasticsearch.version>5.4.1</elasticsearch.version>
+		<elasticsearch.version>${project.version}</elasticsearch.version>
 		<lucence.version>6.4.1</lucence.version>
 		<elasticsearch.assembly.descriptor>${basedir}/src/main/assemblies/plugin.xml</elasticsearch.assembly.descriptor>
 	</properties>
